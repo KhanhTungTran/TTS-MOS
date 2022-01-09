@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="./script.js"></script>
 </head>
 
 <body>
@@ -38,8 +40,8 @@
         <form id="theForm" action="https://script.google.com/macros/s/AKfycbzApm3cSoTRMbhTaEgd3c3VtpV9nRP1DUqxXQLsyVz9uAtTrSty/exec" method="GET" onsubmit="return preventRepeatedSubmission();">
             
     
-        <div class="card form-group">
-            <div class="card-header">Question 1</div>
+        <div class="card form-group" id="q1">
+            <div class="card-header" >Question 1</div>
             
                 <div class="card-body">
                     <span>
@@ -271,8 +273,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 2</div>
+        <div class="card form-group" id="q2">
+            <div class="card-header" >Question 2</div>
             
                 <div class="card-body">
                     <span>
@@ -504,8 +506,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 3</div>
+        <div class="card form-group" id="q3">
+            <div class="card-header" >Question 3</div>
             
                 <div class="card-body">
                     <span>
@@ -737,8 +739,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 4</div>
+        <div class="card form-group" id="q4">
+            <div class="card-header" >Question 4</div>
             
                 <div class="card-body">
                     <span>
@@ -970,8 +972,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 5</div>
+        <div class="card form-group" id="q5">
+            <div class="card-header" >Question 5</div>
             
                 <div class="card-body">
                     <span>
@@ -1203,8 +1205,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 6</div>
+        <div class="card form-group" id="q6">
+            <div class="card-header" >Question 6</div>
             
                 <div class="card-body">
                     <span>
@@ -1436,8 +1438,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 7</div>
+        <div class="card form-group" id="q7">
+            <div class="card-header" >Question 7</div>
             
                 <div class="card-body">
                     <span>
@@ -1669,8 +1671,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 8</div>
+        <div class="card form-group" id="q8">
+            <div class="card-header" >Question 8</div>
             
                 <div class="card-body">
                     <span>
@@ -1902,8 +1904,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 9</div>
+        <div class="card form-group" id="q9">
+            <div class="card-header" >Question 9</div>
             
                 <div class="card-body">
                     <span>
@@ -2135,8 +2137,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 10</div>
+        <div class="card form-group" id="q10">
+            <div class="card-header" >Question 10</div>
             
                 <div class="card-body">
                     <span>
@@ -2368,8 +2370,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 11</div>
+        <div class="card form-group" id="q11">
+            <div class="card-header" >Question 11</div>
             
                 <div class="card-body">
                     <span>
@@ -2601,8 +2603,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 12</div>
+        <div class="card form-group" id="q12">
+            <div class="card-header" >Question 12</div>
             
                 <div class="card-body">
                     <span>
@@ -2834,8 +2836,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 13</div>
+        <div class="card form-group" id="q13">
+            <div class="card-header" >Question 13</div>
             
                 <div class="card-body">
                     <span>
@@ -3067,8 +3069,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 14</div>
+        <div class="card form-group" id="q14">
+            <div class="card-header" >Question 14</div>
             
                 <div class="card-body">
                     <span>
@@ -3300,8 +3302,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 15</div>
+        <div class="card form-group" id="q15">
+            <div class="card-header" >Question 15</div>
             
                 <div class="card-body">
                     <span>
@@ -3533,8 +3535,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 16</div>
+        <div class="card form-group" id="q16">
+            <div class="card-header" >Question 16</div>
             
                 <div class="card-body">
                     <span>
@@ -3766,8 +3768,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 17</div>
+        <div class="card form-group" id="q17">
+            <div class="card-header" >Question 17</div>
             
                 <div class="card-body">
                     <span>
@@ -3999,8 +4001,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 18</div>
+        <div class="card form-group" id="q18">
+            <div class="card-header" >Question 18</div>
             
                 <div class="card-body">
                     <span>
@@ -4232,8 +4234,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 19</div>
+        <div class="card form-group" id="q19">
+            <div class="card-header" >Question 19</div>
             
                 <div class="card-body">
                     <span>
@@ -4465,8 +4467,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 20</div>
+        <div class="card form-group" id="q20">
+            <div class="card-header" >Question 20</div>
             
                 <div class="card-body">
                     <span>
@@ -4698,8 +4700,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 21</div>
+        <div class="card form-group" id="q21">
+            <div class="card-header" >Question 21</div>
             
                 <div class="card-body">
                     <span>
@@ -4931,8 +4933,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 22</div>
+        <div class="card form-group" id="q22">
+            <div class="card-header" >Question 22</div>
             
                 <div class="card-body">
                     <span>
@@ -5164,8 +5166,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 23</div>
+        <div class="card form-group" id="q23">
+            <div class="card-header" >Question 23</div>
             
                 <div class="card-body">
                     <span>
@@ -5397,8 +5399,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 24</div>
+        <div class="card form-group" id="q24">
+            <div class="card-header" >Question 24</div>
             
                 <div class="card-body">
                     <span>
@@ -5630,8 +5632,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 25</div>
+        <div class="card form-group" id="q25">
+            <div class="card-header" >Question 25</div>
             
                 <div class="card-body">
                     <span>
@@ -5863,8 +5865,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 26</div>
+        <div class="card form-group" id="q26">
+            <div class="card-header" >Question 26</div>
             
                 <div class="card-body">
                     <span>
@@ -6096,8 +6098,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 27</div>
+        <div class="card form-group" id="q27">
+            <div class="card-header" >Question 27</div>
             
                 <div class="card-body">
                     <span>
@@ -6329,8 +6331,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 28</div>
+        <div class="card form-group" id="q28">
+            <div class="card-header" >Question 28</div>
             
                 <div class="card-body">
                     <span>
@@ -6562,8 +6564,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 29</div>
+        <div class="card form-group" id="q29">
+            <div class="card-header" >Question 29</div>
             
                 <div class="card-body">
                     <span>
@@ -6795,8 +6797,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 30</div>
+        <div class="card form-group" id="q30">
+            <div class="card-header" >Question 30</div>
             
                 <div class="card-body">
                     <span>
@@ -7028,8 +7030,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 31</div>
+        <div class="card form-group" id="q31">
+            <div class="card-header" >Question 31</div>
             
                 <div class="card-body">
                     <span>
@@ -7261,8 +7263,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 32</div>
+        <div class="card form-group" id="q32">
+            <div class="card-header" >Question 32</div>
             
                 <div class="card-body">
                     <span>
@@ -7494,8 +7496,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 33</div>
+        <div class="card form-group" id="q33">
+            <div class="card-header" >Question 33</div>
             
                 <div class="card-body">
                     <span>
@@ -7727,8 +7729,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 34</div>
+        <div class="card form-group" id="q34">
+            <div class="card-header" >Question 34</div>
             
                 <div class="card-body">
                     <span>
@@ -7960,8 +7962,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 35</div>
+        <div class="card form-group" id="q35">
+            <div class="card-header" >Question 35</div>
             
                 <div class="card-body">
                     <span>
@@ -8193,8 +8195,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 36</div>
+        <div class="card form-group" id="q36">
+            <div class="card-header" >Question 36</div>
             
                 <div class="card-body">
                     <span>
@@ -8426,8 +8428,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 37</div>
+        <div class="card form-group" id="q37">
+            <div class="card-header" >Question 37</div>
             
                 <div class="card-body">
                     <span>
@@ -8659,8 +8661,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 38</div>
+        <div class="card form-group" id="q38">
+            <div class="card-header" >Question 38</div>
             
                 <div class="card-body">
                     <span>
@@ -8892,8 +8894,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 39</div>
+        <div class="card form-group" id="q39">
+            <div class="card-header" >Question 39</div>
             
                 <div class="card-body">
                     <span>
@@ -9125,8 +9127,8 @@
             
         </div>
     
-        <div class="card form-group">
-            <div class="card-header">Question 40</div>
+        <div class="card form-group" id="q40">
+            <div class="card-header" >Question 40</div>
             
                 <div class="card-body">
                     <span>
