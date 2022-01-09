@@ -18,28 +18,15 @@
 
     <div class="container" id="form_container">
         <form id="theForm" action="{{ form_url }}" method="GET" onsubmit="return preventRepeatedSubmission();">
-            <div class="form-group">
-                <label for="name">姓名：</label>
-                <input class="form-control" type="text" inputmode="text" name="name" required>
-                <small class="form-text text-muted">必填*</small>
-            </div>
-            <div class="form-group">
-                <label for="mail">電子郵件：</label>
-                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail">
-                <small class="form-text text-muted">如果中獎，我們將以電子郵件通知您</small>
-            </div>
             {% block form_questions %}{% endblock %}
             <input type="text" name="formid" value="{{ form_id }}" hidden>
-            <input type="text" name="thank" value="再次謝謝您參與本次實驗！" hidden>
-            <input class="btn btn-info btn-lg" type="submit" value="提交結果" id="submitBtn">
-            <p class="text-muted">
-                <small>如果提交結果時發現繳不出去，請回頭檢查是否有填入姓名、是否每一題都有作答到，謝謝。</small>
-            </p>
+            <input type="text" name="thank" value="Thank you again for participating in this experiment!" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="submit_result" id="submitBtn">
         </form>
     </div>
 
     <div class="container" style="padding-top: 60px;">
-        <p class="text-center text-muted">&copy; 台大語音實驗室</p>
+        <p class="text-center text-muted">&copy; HCMUT</p>
     </div>
 
     <script type="text/javascript">

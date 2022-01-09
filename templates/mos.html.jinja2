@@ -1,21 +1,19 @@
 {% extends "base.html.jinja2" %}
 {% block heading %}
-    <h1 class="display-4">MOS 實驗</h1>
-    <p class="lead">合成語音品質評估</p>
+    <h1 class="display-4">MOS Experiment</h1>
+    <p class="lead">Evaluate the quality of speech systhesis</p>
     <hr class="my-4">
     <p>
-        感謝您參與本次實驗！
+        Thank you for participating in this experiment!
     </p>
     <p>
-        在這個實驗中，我們使用電腦合成人類語音。
-        以下的音檔中，包含了真實的錄音以及合成的聲音，並且每句話都有附上文字稿。
-        請受試者使用耳機聆聽，並根據每個音檔的品質，給予以下幾種評分：
+        In this experiment, we use a computer to synthesize human speech. The following audio files contain real recordings and synthesized voices, and each sentence is accompanied by a transcript. The subjects were asked to listen with headphones and gave the following scores according to the quality of each sound file:
         <ul>
-            <li>１（非常不好）</li>
-            <li>２（不好）</li>
-            <li>３（普通）</li>
-            <li>４（好）</li>
-            <li>５（非常好）</li>
+            <li>１（Very bad）</li>
+            <li>２（Not good）</li>
+            <li>３（Common）</li>
+            <li>４（Good）</li>
+            <li>５（Very good）</li>
         </ul>
     </p>
 {% endblock %}
@@ -23,33 +21,44 @@
     {% for question in questions %}
         <div class="card form-group">
             <div class="card-header">{{ question.title }}</div>
-            <div class="card-body">
-                <p>
-                    <audio controls src="{{ question.audio_path }}">
-                        Your browser does not support the audio element.
-                    </audio>
-                </p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_1" value="5" required>
-                    <label class="form-check-label" for="{{ question.name }}_1">５（非常好）</label>
+            {% for audio_path in question.audio_paths%}
+                <div class="card-body">
+                    <p>
+                        <audio controls src="{{ audio_path }}">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </p>
+                    {% set name = question.name ~ "_" ~ loop.index %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_1" value="5" required>
+                        <label class="form-check-label" for="{{ name }}_1">５</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_2" value="4.5" required>
+                        <label class="form-check-label" for="{{ name }}_2">4.5</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_3" value="4" required>
+                        <label class="form-check-label" for="{{ name }}_3">４</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_4" value="3.5" required>
+                        <label class="form-check-label" for="{{ name }}_4">3.5</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_5" value="3" required>
+                        <label class="form-check-label" for="{{ name }}_5">３</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_6" value="2.5" required>
+                        <label class="form-check-label" for="{{ name }}_6">2.5</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_7" value="2" required>
+                        <label class="form-check-label" for="{{ name }}_7">２</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_8" value="1.5" required>
+                        <label class="form-check-label" for="{{ name }}_8">２</label>
+
+                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_9" value="1" required>
+                        <label class="form-check-label" for="{{ name }}_9">１</label>
+                    </div>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_2" value="4" required>
-                    <label class="form-check-label" for="{{ question.name }}_2">４（好）</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_3" value="3" required>
-                    <label class="form-check-label" for="{{ question.name }}_3">３（普通）</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_4" value="2" required>
-                    <label class="form-check-label" for="{{ question.name }}_4">２（不好）</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_5" value="1" required>
-                    <label class="form-check-label" for="{{ question.name }}_5">１（非常不好）</label>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     {% endfor %}
 {% endblock %}
