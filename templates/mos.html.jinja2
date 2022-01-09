@@ -23,39 +23,59 @@
             <div class="card-header">{{ question.title }}</div>
             {% for audio_path in question.audio_paths%}
                 <div class="card-body">
-                    <p>
+                    <span>
                         <audio controls src="{{ audio_path }}">
                             Your browser does not support the audio element.
                         </audio>
-                    </p>
+                    </span>
                     {% set name = question.name ~ "_" ~ loop.index %}
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_1" value="5" required>
-                        <h5>5</h5>
+                        <ul id="score">
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_1" value="5" required>   
+                                <span>5</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_2" value="4.5" required>
-                        <h5>4.5</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_2" value="4.5" required> 
+                                <span>4.5</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_3" value="4" required>
-                        <h5>４</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_3" value="4" required>   
+                                <span>4</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_4" value="3.5" required>
-                        <h5>3.5</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_4" value="3.5" required> 
+                                <span>3.5</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_5" value="3" required>
-                        <h5">３</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_5" value="3" required>   
+                                <span>3</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_6" value="2.5" required>
-                        <h5">2.5</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_6" value="2.5" required> 
+                                <span>2.5</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_7" value="2" required>
-                        <h5">２</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_7" value="2" required>   
+                                <span>2</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_8" value="1.5" required>
-                        <h5">２</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_8" value="1.5" required> 
+                                <span>1.5</span>
+                            </li>
 
-                        <input class="form-check-input" type="radio" name="{{ name }}" id="{{ name }}_9" value="1" required>
-                        <h5>１</h5>
+                            <li>
+                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_9" value="1" required>   
+                                <span>1</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             {% endfor %}

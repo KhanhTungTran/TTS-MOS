@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
             {% block form_questions %}{% endblock %}
             <input type="text" name="formid" value="{{ form_id }}" hidden>
             <input type="text" name="thank" value="Thank you again for participating in this experiment!" hidden>
-            <input class="btn btn-info btn-lg" type="submit" value="submit_result" id="submitBtn">
+            <input class="btn btn-info btn-lg" type="submit" value="SUBMIT" id="submitBtn">
         </form>
     </div>
 

@@ -3,6 +3,7 @@
 
 from jinja2 import FileSystemLoader, Environment
 
+NUM = 40
 
 def main():
     """Main function."""
@@ -12,22 +13,15 @@ def main():
 
     html = template.render(
         page_title="MOS Experiment Form 1",
-        form_url="https://script.googleusercontent.com/a/macros/hcmut.edu.vn/echo?user_content_key=Eu-JMluz1jbTPtY6iFrR6kpaLppVF-GPPxDHqjEvW_LKjGXy3JU13Dly4-JSUkhmcBdr8apTz9p-76TdGkiYTisoTXXOUydFm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_nRPgeZU6HP-kBB7dw9cxQg-axdEUzoD4h0lmODcuY_0u0-uhyqDm_cXfVzxRl393pKVIncqArub0GP-If4GSGem-6CwWxbcCdoSaqL2SwsZLpwlMMG3mig&lib=M12yLyt9Zl8s8EiKk1VyYdRcha9aOzO03",
+        form_url="https://script.google.com/macros/s/AKfycbzApm3cSoTRMbhTaEgd3c3VtpV9nRP1DUqxXQLsyVz9uAtTrSty/exec",
         form_id=1,
-        questions=[
-            {
-                "title": "Question 1",
-                "audio_paths": ["wavs/test1.wav","wavs/test2.wav"],
-                "name": "q1"
-            },
-            {
-                "title": "Question 2",
-                "audio_paths": ["wavs/test1.wav","wavs/test2.wav"],
-                "name": "q2"
-            },
-        ]
+        questions=[{
+                    "title" : "Question " + str(i+1),
+                    "audio_paths": ["wavs/test1.wav","wavs/test2.wav","wavs/test3.wav","wavs/test4.wav"],
+                    "name": "q" + str(i+1)} for i in range(NUM)]
     )
-    print(html)
+    with open("rendered_mos.html", "w", encoding="utf-8") as f:
+        f.write(html)
 
 
 if __name__ == "__main__":
