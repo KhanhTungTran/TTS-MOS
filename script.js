@@ -12,7 +12,7 @@ $('document').ready(function(){
 
     shuffleArray(arr);
 
-    arr.slice(0,30).forEach(function(val,idx){
+    arr.slice(0,32).forEach(function(val,idx){
         var id = "#q" + val.toString();
         $(id).remove(); 
     });

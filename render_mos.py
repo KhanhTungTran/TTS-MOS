@@ -17,10 +17,10 @@ def main():
         form_id=1,
         questions=[{
                     "title" : "Question " + str(i),
-                    "audio_paths": ["wavs/q"+str(i)+"/test1.wav","wavs/q"+str(i)+"/test2.wav","wavs/q"+str(i)+"/test3.wav","wavs/q"+str(i)+"/test4.wav"],
+                    "audio_paths": ["wavs/q"+str(i)+"/test1.wav","wavs/q"+str(i)+"/test2.wav","wavs/q"+str(i)+"/test3.wav","wavs/q"+str(i)+"/test4.wav","wavs/q"+str(i)+"/test5.wav"],
                     "name": "q" + str(i)} for i in range(1,NUM+1)]
     )
-    with open("rendered_mos.html", "w", encoding="utf-8") as f:
+    with open("rendered_mos_v2.html", "w", encoding="utf-8") as f:
         f.write(html)
 
 
