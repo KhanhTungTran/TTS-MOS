@@ -1,26 +1,33 @@
 {% extends "base.html.jinja2" %}
 {% block heading %}
-    <h1 class="display-4">MOS Experiment</h1>
-    <p class="lead">Evaluate the quality of speech systhesis</p>
+    <h1 class="display-4">Comparative MOS Experiment</h1>
+    <p class="lead">Evaluate the quality of speech synthesis</p>
     <hr class="my-4">
     <p>
         Thank you for participating in this experiment!
     </p>
     <p>
-        In this experiment, we use a computer to synthesize human speech. The following audio files contain real recordings and synthesized voices, and each sentence is accompanied by a transcript. The subjects were asked to listen with headphones and gave the following scores according to the quality of each sound file:
+        In this experiment, we use a computer to synthesize human speech. You are asked to listen and <b>compare how natural (i.e. human sounding) is the second recording compared to the first?</b> Please focus on the naturalness of prosody and rythm (pitch, energy, ...) and audio quality (noise, sound clarity, timbre, ...).
+        <br><b>If the fist audio sound more natural, your score should be negative, and vice versa.</b>
         <ul>
-            <li>１（Very bad）</li>
-            <li>２（Not good）</li>
-            <li>３（Common）</li>
-            <li>４（Good）</li>
-            <li>５（Very good）</li>
+            <li>3（Much better)</li>
+            <li>２（Better</li>
+            <li>1（Slightly better)</li>
+            <li>0（About the same)</li>
+            <li>-1（Slightly worse)</li>
+            <li>-2（Worse)</li>
+            <li>-3（Much worse)</li>
         </ul>
+        Note that the order of the audios appeared in each question is randomized.
     </p>
 {% endblock %}
 {% block form_questions %}
     {% for question in questions %}
         <div class="card form-group" id="{{question.name}}">
             <div class="card-header" >{{ question.title }}</div>
+            <div class="card-body">
+                <b>Transcript: </b>{{question.text}}
+            </div>
             {% for audio_path in question.audio_paths%}
                 <div class="card-body">
                     <span>
@@ -28,58 +35,47 @@
                             Your browser does not support the audio element.
                         </audio>
                     </span>
-                    {% set name = question.name ~ "_" ~ loop.index %}
-                    <div class="form-check">
-                        <ul id="score">
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_9" value="1" required>   
-                                <span>1</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_8" value="1.5" required> 
-                                <span>1.5</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_7" value="2" required>   
-                                <span>2</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_6" value="2.5" required> 
-                                <span>2.5</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_5" value="3" required>   
-                                <span>3</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_4" value="3.5" required> 
-                                <span>3.5</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_3" value="4" required>   
-                                <span>4</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_2" value="4.5" required> 
-                                <span>4.5</span>
-                            </li>
-
-                            <li>
-                                <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_1" value="5" required>   
-                                <span>5</span>
-                            </li>
-                       
-                        </ul>
-                    </div>
                 </div>
             {% endfor %}
+            {% set name = question.name %}
+            <div class="form-check">
+                <ul id="score">
+                    <li>
+                        <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_9" value="3" required>   
+                        <span>3</span>
+                    </li>
+
+                    <li>
+                        <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_8" value="2" required> 
+                        <span>2</span>
+                    </li>
+
+                    <li>
+                        <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_7" value="1" required>   
+                        <span>1</span>
+                    </li>
+
+                    <li>
+                        <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_6" value="0" required> 
+                        <span>0</span>
+                    </li>
+
+                    <li>
+                        <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_5" value="-1" required>   
+                        <span>-1</span>
+                    </li>
+
+                    <li>
+                        <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_4" value="-2" required> 
+                        <span>-2</span>
+                    </li>
+
+                    <li>
+                        <input class="form-check-input" type="radio" name="{{name}}" id="{{name}}_3" value="-3" required>   
+                        <span>-3</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}

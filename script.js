@@ -1,5 +1,5 @@
 $('document').ready(function(){
-    let arr = Array.from({length : 40}, (_, v) => v + 1)
+    let arr = Array.from({length : 30}, (_, v) => v + 1)
 
     const shuffleArray = arr => {
         for (let i = arr.length - 1; i > 0; i--) {
@@ -12,7 +12,7 @@ $('document').ready(function(){
 
     shuffleArray(arr);
 
-    arr.slice(0,32).forEach(function(val,idx){
+    arr.slice(0,20).forEach(function(val,idx){
         var id = "#q" + val.toString();
         $(id).remove(); 
     });
